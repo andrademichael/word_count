@@ -1,11 +1,14 @@
 class String
-  define_method(:word_count) do |search_text|
-    if self == "" || search_text == ""
+  define_method(:word_count) do |search_term|
+    if self == "" || search_term == ""
       break
-    elsif self == search_text
+      puts "Empty string error"
+    elsif self == search_term
+      puts "identical text"
       1
     else
-      matches = search_text.scan(/\b#{self}\b/)
+      matches = self.scan(/\b#{search_term}\b/)
+      puts matches.length
       matches.length
     end
   end

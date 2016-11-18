@@ -8,9 +8,9 @@ get('/') do
 end
 
 get('/count') do
-  @term = params.fetch('search_term')
+  @term = params.fetch('search_term').upcase
   puts @term
-  @text = params.fetch('search_text')
+  @text = params.fetch('search_text').upcase
   puts @text
   @count = @text.word_count(@term)
   puts @count

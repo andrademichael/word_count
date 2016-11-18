@@ -7,6 +7,8 @@ class String
       puts "identical text"
       1
     else
+      self.upcase!
+      search_term.upcase!
       matches = self.scan(/\b#{search_term}\b/)
       puts matches.length
       matches.length

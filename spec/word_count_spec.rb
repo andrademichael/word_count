@@ -10,5 +10,8 @@ describe("Word Count will accept two strings and count how many times the first 
     expect("dog".word_count("dog")).to(eq(1))
     expect("dog".word_count("cat")).to(eq(0))
   end
-
+  it("Returns the number of times the search term is exactly matched in the search text.") do
+    expect("bar".word_count("The bartender jumped over the bar and grabbed the gun by its barrel.")).to(eq(1))
+    expect("bear".word_count("The bear ate him, just as its forebear had eaten his father, the bear hunter.")).to(eq(2))
+  end
 end
